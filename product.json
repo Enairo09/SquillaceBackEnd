@@ -1,0 +1,52 @@
+{
+    "products": [
+        {
+            "name": "Macbook Pro 13’’",
+            "price": 1124.99,
+            "type": "Computer",
+            "enabled": true
+        },
+        {
+            "name": "IphoneX",
+            "price": 789,
+            "type": "Phone",
+            "enabled": true
+        },
+        {
+            "name": "Tablette Samsung Galaxy",
+            "price": 199.99,
+            "type": "Pad",
+            "enabled": true
+        },
+        {
+            "name": "IPad",
+            "price": 554,
+            "type": "Pad",
+            "enabled": true
+        },
+        {
+            "name": "Nitendo Switch",
+            "price": 389.99,
+            "type": "gaming",
+            "enabled": true
+        },
+        {
+            "name": "Zelda BOTW",
+            "price": 47,
+            "type": "gaming",
+            "enabled": true
+        },
+        {
+            "name": "The Walking Dead",
+            "price": 49,
+            "type": "gaming",
+            "enabled": true
+        },
+        {
+            "name": "Doom",
+            "price": 27,
+            "type": "gaming",
+            "enabled": true
+        }
+    ]
+}
