@@ -1,51 +1,73 @@
 {
     "products": [
         {
-            "name": "Macbook Pro 13’’",
+            "name": "Top zippé au dos ",
             "price": 1124.99,
-            "type": "Computer",
+            "type": "Top",
+            "img": "0.jpg",
             "enabled": true
         },
         {
-            "name": "IphoneX",
-            "price": 789,
-            "type": "Phone",
+            "name": "Robe plissée",
+            "price": 2500,
+            "type": "Robe",
+            "img": "1.jpg",
             "enabled": true
         },
         {
-            "name": "Tablette Samsung Galaxy",
-            "price": 199.99,
-            "type": "Pad",
+            "name": "Veste cuir",
+            "price": 1700,
+            "type": "Veste",
+            "img": "2.jpg",
             "enabled": true
         },
         {
-            "name": "IPad",
-            "price": 554,
-            "type": "Pad",
+            "name": "Veste longue transparente",
+            "price": 1479,
+            "type": "Veste",
+            "img": "3.jpg",
             "enabled": true
         },
         {
-            "name": "Nitendo Switch",
-            "price": 389.99,
-            "type": "gaming",
+            "name": "Top brodé main",
+            "price": 870,
+            "type": "Top",
+            "img": "4.jpg",
             "enabled": true
         },
         {
-            "name": "Zelda BOTW",
-            "price": 47,
-            "type": "gaming",
+            "name": "Veste sans manche",
+            "price": 1300,
+            "type": "Veste",
+            "img": "5.jpg",
             "enabled": true
         },
         {
-            "name": "The Walking Dead",
-            "price": 49,
-            "type": "gaming",
+            "name": "Robe cuir et soie",
+            "price": 1100,
+            "type": "Robe",
+            "img": "6.jpg",
             "enabled": true
         },
         {
-            "name": "Doom",
-            "price": 27,
-            "type": "gaming",
+            "name": "Blazer plissé",
+            "price": 1689,
+            "type": "Veste",
+            "img": "7.jpg",
+            "enabled": true
+        },
+        {
+            "name": "Top en cuir",
+            "price": 900,
+            "type": "Top",
+            "img": "8.jpg",
+            "enabled": true
+        },
+        {
+            "name": "Robe en soie",
+            "price": 850,
+            "type": "Top",
+            "img": "9.jpg",
             "enabled": true
         }
     ]
