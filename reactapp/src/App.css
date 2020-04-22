@@ -1461,7 +1461,10 @@ flex-direction: column;
     margin:2%;
     width: 96%;
   }
- 
+ .totalCartship{
+  margin:2%;
+  width: 96%;
+ }
 }
 /* ====================================
 PAYMENT
