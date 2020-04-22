@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "heroku-postbuild": "cd reactapp && npm start && npm run build"
+    "build": "cd reactapp && npm run build",
+    "install-client": "cd reactapp && npm install",
+    "heroku-postbuild": "npm install-client && npm build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
