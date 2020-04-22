@@ -76,10 +76,6 @@ function onError(error) {
       throw error;
   }
 }
-//tuto mern
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('reactapp/build'));
-}
 
 /**
  * Event listener for HTTP server "listening" event.
