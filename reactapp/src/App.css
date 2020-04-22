@@ -23,6 +23,14 @@ body {
   }
 }
 
+input[type=submit]{
+  -webkit-appearance: none;
+  border-radius: .2rem;;
+}
+input[type=button]{
+  -webkit-appearance: none;
+  border-radius: .2rem;;
+}
 @media only screen and (max-width: 980px) {
   body{
     font-size: calc(0.7vh + 1vw);
