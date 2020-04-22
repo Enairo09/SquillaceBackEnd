@@ -1336,7 +1336,9 @@ CHECKOUT
   .blocCheckout{
     flex-direction: column-reverse;
   }
-
+.loginCheckoutBIG{
+  width: 90%
+}
   .loginCheckout{
     width: 90%;
     /* margin:5% */
