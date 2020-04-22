@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('epsorapp:server');
+var debug = require('debug')('squillace:server');
 var http = require('http');
 
 /**

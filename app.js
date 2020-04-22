@@ -35,11 +35,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'reactapp/build')));
-//tuto mern
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'reactapp/build'))) ||
-    app.use(express.static('reactapp/build'));
-}
+// //tuto mern
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, 'reactapp/build'))) ||
+//     app.use(express.static('reactapp/build'));
+// }
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

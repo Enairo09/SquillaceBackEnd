@@ -6,7 +6,7 @@ var options = {
     useUnifiedTopology: true
 }
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://enairo:enairo@cluster0-pte8o.mongodb.net/Martina',
+mongoose.connect('mongodb+srv://enairo:enairo@cluster0-pte8o.mongodb.net/Martina',
     options,
     function (error) {
         if (error) {
