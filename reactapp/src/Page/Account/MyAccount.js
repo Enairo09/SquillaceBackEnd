@@ -55,7 +55,7 @@ const MyAccount = (props) => {
     useEffect(() => {
         //console.log("je recois quoi ? ?? ", props.prodList);
         const fetchData = async () => {
-            let url = '/myaccount';
+            let url = '/api/myaccount';
             fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

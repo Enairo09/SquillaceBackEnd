@@ -39,7 +39,7 @@ const Checkout = (props) => {
     useEffect(() => {
         console.log("je recois quoi ? ?? ", props.prodList);
         const fetchData = async () => {
-            let url = '/get-user-from-order';
+            let url = '/api/get-user-from-order';
             await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -65,7 +65,7 @@ const Checkout = (props) => {
     //je me connecte
     const loginUser = (e) => {
         e.preventDefault();
-        let url = '/login';
+        let url = '/api/login';
 
         fetch(url, {
             method: 'POST',
@@ -100,7 +100,7 @@ const Checkout = (props) => {
     // je cree un nouvel user
     const login = (e) => {
         e.preventDefault();
-        let url = '/newuser';
+        let url = '/api/newuser';
 
         fetch(url, {
             method: 'POST',

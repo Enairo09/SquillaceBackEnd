@@ -64,7 +64,7 @@ const Payment = (props) => {
     useEffect(() => {
         const fetchData = async () => {
 
-            let url = '/getuserandcart';
+            let url = '/api/getuserandcart';
             fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

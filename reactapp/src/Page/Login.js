@@ -30,7 +30,7 @@ const Login = (props) => {
     const login = (e) => {
         e.preventDefault();
 
-        let url = '/newuser';
+        let url = '/api/newuser';
         // let body = `orderID=${orderID}&email=${user.email}&password=${user.password}&statut=user`
         // if (allOptions(orderID)) {
         //     body = `email=${user.email}&password=${user.password}&statut=user&order=${orderID}`
@@ -68,7 +68,7 @@ const Login = (props) => {
     //je me connecte
     const loginUser = (e) => {
         e.preventDefault();
-        let url = '/login';
+        let url = '/api/login';
 
         fetch(url, {
             method: 'POST',

@@ -18,7 +18,7 @@ const Product = (props) => {
   //je recupere ma liste de produits
   useEffect(() => {
     const fetchData = async () => {
-      await fetch('/product')
+      await fetch('/api/product')
         .then(response => response.json())
         .then(response => setproductList(response.products))
         .catch(error => console.log("erreur fetch", error))

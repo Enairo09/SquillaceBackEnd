@@ -40,7 +40,7 @@ const SettingsForm = (props) => {
     useEffect(() => {
         console.log('here-------', props)
         const fetchData = async () => {
-            let url = '/getuser';
+            let url = '/api/getuser';
             await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -93,7 +93,7 @@ const SettingsForm = (props) => {
 
     const submitForm = (e) => {
         e.preventDefault();
-        let url = '/updateuserdetails';
+        let url = '/api/updateuserdetails';
         fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -111,7 +111,7 @@ const SettingsForm = (props) => {
     }
     const submitFormAddress = (e) => {
         e.preventDefault();
-        let url = '/updateuseraddress';
+        let url = '/api/updateuseraddress';
         let body
         if (showBilling) {
             body = `id=${userID}&firstname=${user.firstname}&lastname=${user.lastname}&address=${user.address}&optional=${user.optional}&zipcode=${user.zipcode}&city=${user.city}&state=${user.state}&compagnyname=${user.compagnyname}&billingaddress=${user.billingaddress}&billingoptional=${user.billingoptional}&billingzipcode=${user.billingzipcode}&billingcity=${user.billingcity}&billingstate=${user.billingstate}`

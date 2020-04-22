@@ -29,7 +29,7 @@ const HomePage = (props) => {
   //je supprime un produit
   var deleteProduct = (arg) => {
     console.log('click', arg)
-    fetch(`/deleteproduct`, {
+    fetch(`/api/deleteproduct`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `id=${arg}`

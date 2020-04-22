@@ -32,7 +32,7 @@ const Cart = (props) => {
 
         const fetchData = async () => {
 
-            let url = `/cart`
+            let url = `/api/cart`
             await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -58,7 +58,7 @@ const Cart = (props) => {
 
     //supprimer du panier 
     let deleteproduct = async (id) => {
-        let url = `/delete-product-from-order`
+        let url = `/api/delete-product-from-order`
         await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -97,7 +97,7 @@ const Cart = (props) => {
     // mettre a jour la quantité d'un article
     let updateQty = async (qty, id, size) => {
         console.log(qty, id, size)
-        let url = `/update-qty-to-order`
+        let url = `/api/update-qty-to-order`
         await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

@@ -65,7 +65,7 @@ const CheckoutShipForm = (props) => {
     useEffect(() => {
         //console.log("je recois quoi ? ?? ", props.prodList);
         const fetchData = async () => {
-            let url = '/getuser';
+            let url = '/api/getuser';
             fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -118,7 +118,7 @@ const CheckoutShipForm = (props) => {
         e.preventDefault();
         props.setnewUser(user);
         //console.log('retour formulaire ==', e.target)
-        let url = '/updateuseraddress';
+        let url = '/api/updateuseraddress';
         fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -146,7 +146,7 @@ const CheckoutShipForm = (props) => {
     const submitFormShipping = (e, typeForm) => {
         e.preventDefault();
         props.setnewUser(user);
-        let url = '/addshippingaddress';
+        let url = '/api/addshippingaddress';
         fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

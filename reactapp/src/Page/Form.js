@@ -16,7 +16,7 @@ const Form = (props) => {
 	const newProduct = async (e) => {
 
 		e.preventDefault();
-		let url = '/addproduct';
+		let url = '/api/addproduct';
 
 		await fetch(url, {
 			method: 'POST',

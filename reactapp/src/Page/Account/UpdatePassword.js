@@ -96,7 +96,7 @@ const UpdatePassword = (props) => {
         if (password.confirm === password.new) {
             setnomatch(false);
             const fetchData = async () => {
-                let url = '/changepassword';
+                let url = '/api/changepassword';
                 fetch(url, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

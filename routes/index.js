@@ -71,7 +71,7 @@ router.get('/', async function (req, res, next) {
       });
   }
 
-  res.render('index', { title: 'Express' });
+  res.json({ result: 'true' });
 });
 
 //récuperer tous les produits
@@ -206,11 +206,11 @@ router.post('/contact', async (req, res, next) => {
   var name = req.body.name
   var email = req.body.email
   var message = req.body.message
-  var content = `Bonjour Martina, \n\n Vous avez reçu un nouveau message de ${name} \n\n Email client : ${email} \n\n message: ${message} `
+  var content = `Bonjour Martina, \n\n Vous avez reçu un nouveau message de ${name} \n\n Email client : ${email} \n\n message: \n\n ${message} `
   console.log('hello', content)
   let mail = await transporter.sendMail({
     from: name,
-    to: 'oriane.mathet@gmail.com',  //Change to email address that you want to receive messages on
+    to: 'agnoste.loky@gmail.com',  //Change to email address that you want to receive messages on
     subject: 'New Message from Contact Form',
     text: content
   }, (err, data) => {

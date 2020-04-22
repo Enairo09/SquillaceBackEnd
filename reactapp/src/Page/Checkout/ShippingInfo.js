@@ -39,7 +39,7 @@ const ShippingInfo = (props) => {
     useEffect(() => {
         const fetchData = async () => {
 
-            let url = `/cart`
+            let url = `/api/cart`
             await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -68,7 +68,7 @@ const ShippingInfo = (props) => {
     let sendForm = (e) => {
         console.log('send guest', guest);
         e.preventDefault();
-        let url = '/addguest';
+        let url = '/api/addguest';
 
         fetch(url, {
             method: 'POST',

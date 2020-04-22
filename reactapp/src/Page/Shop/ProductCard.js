@@ -52,7 +52,7 @@ const ProductCard = (props) => {
         // props.newOrder(orderID)
         const fetchData = async () => {
 
-            let url = `/get-one-product`
+            let url = `/api/get-one-product`
             await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -82,7 +82,7 @@ const ProductCard = (props) => {
 
         if (checkIfExist(currentBasket)) {
             //j'ai un panier en cours, j'udpate la quantité et le prix de mon product ==== UPDATE ORDER
-            let url = '/add-product-to-order';
+            let url = '/api/add-product-to-order';
             await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -111,7 +111,7 @@ const ProductCard = (props) => {
 
         } else {
             //je crée un order =========== CREATE NEW ORDER
-            let url = '/createorder';
+            let url = '/api/createorder';
             await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

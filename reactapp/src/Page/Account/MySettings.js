@@ -40,7 +40,7 @@ const MySettings = (props) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            let url = '/getuser';
+            let url = '/api/getuser';
             fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -96,7 +96,7 @@ const MySettings = (props) => {
 
     const subscribe = (e) => {
         e.preventDefault();
-        let url = '/usersubcription';
+        let url = '/api/usersubcription';
         fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

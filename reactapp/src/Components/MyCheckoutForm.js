@@ -30,7 +30,7 @@ async function stripeTokenHandler(token, userID, user, firstname, lastname, bask
 
     // Use fetch to send the token ID and any other payment data to your server.
     // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-    let url = '/charge';
+    let url = '/api/charge';
     const response = await fetch(url, {
         method: 'POST',
         headers: {

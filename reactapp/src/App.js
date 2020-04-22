@@ -54,7 +54,7 @@ function App(props) {
 
 
     const fetchData = async () => {
-      let url = '/get-order-and-user-from-storage';
+      let url = '/api/get-order-and-user-from-storage';
       await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

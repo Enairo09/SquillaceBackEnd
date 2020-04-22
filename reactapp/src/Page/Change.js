@@ -15,7 +15,7 @@ const Change = (props) => {
     // je recupere le produit a modifier
     useEffect(() => {
         const fetchData = async () => {
-            await fetch(`/get-one-product?id=${props.location.idProduct}`)
+            await fetch(`/api/get-one-product?id=${props.location.idProduct}`)
                 .then(response => response.json())
                 .then(response => {
                     setproduct({ id: response.products._id, name: response.products.name, price: response.products.price, type: response.products.type })
@@ -28,7 +28,7 @@ const Change = (props) => {
 
     //je change mon produit
     var changeProduct = () => {
-        fetch(`/changeproduct`, {
+        fetch(`/api/changeproduct`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: `id=${updateProduct.id}&name=${updateProduct.name}&price=${updateProduct.price}&type=${updateProduct.type}`
