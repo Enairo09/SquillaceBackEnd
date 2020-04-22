@@ -34,16 +34,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'reactapp/build')));
-// //tuto mern
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static(path.join(__dirname, 'reactapp/build'))) ||
-//     app.use(express.static('reactapp/build'));
-// }
+
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+app.use(express.static(path.join(__dirname, 'reactapp/build')));
 //added from internet advice
 // app.use(express.static(path.join(__dirname, 'build')));
 
@@ -51,7 +48,14 @@ app.use('/users', usersRouter);
 //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 // });
 
-
+//tuto mern step3
+if (process.env.NODE_ENV === 'production') {
+  //app.use(express.static(path.join(__dirname, 'reactapp/build'))) ||
+  app.use(express.static('reactapp/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'reactapp/build'));
+  });
+}
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
