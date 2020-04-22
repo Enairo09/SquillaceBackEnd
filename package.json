@@ -9,7 +9,7 @@
     "start": "node ./bin/www",
     "build": "cd reactapp && npm run build",
     "install-client": "cd reactapp && npm install",
-    "heroku-postbuild": "npm install-client && npm build"
+    "heroku-postbuild": "npm install-client"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
