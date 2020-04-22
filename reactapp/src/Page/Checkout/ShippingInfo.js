@@ -212,7 +212,7 @@ const ShippingInfo = (props) => {
                     ></input>
 
                 </form>
-                <div className="totalCart" style={{ display: 'flex', justifyContent: 'space-around' }}>
+                <div className="totalCartship" style={{ display: 'flex', justifyContent: 'space-around' }}>
                     <h5 className="h5marg">SHOPPING BAG TOTAL
                 ({totalProdQty} items)
                 </h5>
