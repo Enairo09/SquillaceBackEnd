@@ -449,6 +449,12 @@ PRODUCTS
     padding: 1%
   }
 }
+/* 
+@media only screen and (max-width: 1349px) {
+  .products{
+    width: 20%;
+  }
+} */
 
 @media only screen and (max-width: 930px) {
   .products{
@@ -1435,6 +1441,16 @@ input[type=number] {
   border: 1px solid ;
 } */
 
+@media only screen and (max-width: 780px) {
+  .ShipBloc{
+flex-direction: column;
+  }
+  .checkOutForm{
+    margin:2%;
+    width: 96%;
+  }
+ 
+}
 /* ====================================
 PAYMENT
 ==================================== */
