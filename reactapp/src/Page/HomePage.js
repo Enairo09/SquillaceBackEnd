@@ -54,7 +54,7 @@ const HomePage = (props) => {
                 <a href="https://www.instagram.com/martinasquillace/?hl=fr" target="_blanck" alt=''>
                     <img src="logoinsta.png" className="socMedia" alt='' />
                 </a>
-                <a href="http://www.martinasquillace.com/" target="_blanck" alt=''>
+                <a href="/contact" target="_blanck" alt=''>
                     <img src="logomail.png" className="socMedia" alt='' />
                 </a>
             </div>
