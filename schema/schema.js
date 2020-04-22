@@ -1,7 +1,7 @@
 const graphql = require('graphql');
 const _ = require("lodash");
 const myJson = require("../product.json");
-let bdd = require('../models/BDD');
+let bdd = require('../models/bdd');
 const productModel = require('../models/product');
 
 const { GraphQLObjectType,

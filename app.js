@@ -15,15 +15,15 @@ const schema = require('./schema/schema');
 var cors = require('cors')
 app.use(cors())
 
-app.use('/graphql', graphqlHTTP({
-  schema,
-  rootValue: root,
-  graphiql: true,
-}));
+// app.use('/graphql', graphqlHTTP({
+//   schema,
+//   rootValue: root,
+//   graphiql: true,
+// }));
 
-app.listen(4000, () => {
-  console.log('now listening for request on port 4000');
-});
+// app.listen(4000, () => {
+//   console.log('now listening for request on port 4000');
+// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
