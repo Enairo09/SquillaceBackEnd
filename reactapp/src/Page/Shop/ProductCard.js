@@ -61,8 +61,8 @@ const ProductCard = (props) => {
                 .then(response => response.json())
                 .then(data => {
                     console.log('retour de get one', data)
-                    setproduct({ productID: data.products._id, name: data.products.name, price: data.products.price, type: data.products.type, img: data.products.img })
-                    setproductToBasket({ ...productToBasket, productID: data.products._id, name: data.products.name, type: data.products.type, img: data.products.img, price: data.products.price })
+                    setproduct({ productID: data.products._id, name: data.products.name, price: data.products.price, description: data.products.description, type: data.products.type, img: data.products.img })
+                    setproductToBasket({ ...productToBasket, productID: data.products._id, name: data.products.name, type: data.products.type, description: data.products.description, img: data.products.img, price: data.products.price })
                     if (data.orderID === null) {
                         setcurrentBasket(null);
                     } else {
@@ -168,6 +168,7 @@ const ProductCard = (props) => {
                     <div>
                         <h5>{product.price}€</h5>
                         <h5>{product.type}</h5>
+                        <h5>{product.description}</h5>
                         <form onSubmit={(e) => addProduct(e)} value="Add to cart">
                             <label className='sizeInput'>Size : </label>
                             <select
@@ -184,7 +185,7 @@ const ProductCard = (props) => {
                                     setproductToBasket({ ...productToBasket, quantity: parseFloat(e.target.value), price: auMillieme(e.target.value * product.price) })
                                 }}
                                 value="1" required></input> */}
-                            <input type="submit" className='add-btn' />
+                            <input type="submit" className='add-btn' value="Add to Cart" />
                         </form>
                     </div>
 

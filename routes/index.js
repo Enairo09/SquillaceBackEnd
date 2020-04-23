@@ -62,6 +62,7 @@ router.get('/', async function (req, res, next) {
       name: myJson.products[i].name,
       price: myJson.products[i].price,
       type: myJson.products[i].type,
+      description: myJson.products[i].description,
       img: myJson.products[i].img,
       enabled: myJson.products[i].enabled
     });

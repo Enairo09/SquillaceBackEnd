@@ -46,8 +46,8 @@ const Product = (props) => {
         <img onClick={(e) => { console.log(e.target.id); goToProdCard((e.target.id)) }} id={product._id} className="productPic" src={product.img} />
         <h4>{product.name}</h4>
         <span>
-          <h5>Prix : {product.price}€</h5>
-          <h5>Type de produit : {product.type}</h5>
+          <h5>{product.price}€</h5>
+          {/* <h5>Type de produit : {product.type}</h5> */}
         </span>
         {/* <div>
           <button className='change-btn' onClick={(e) => { addProduct(e.target.value) }} value={product._id}>Ajouter au panier</button>

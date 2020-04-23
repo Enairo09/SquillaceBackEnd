@@ -221,6 +221,7 @@ HEADER
 }
 
  .linkHeader{
+   z-index: 21;
    text-align: center;
   margin: 1%;
   width: 100%; 
@@ -332,14 +333,21 @@ li:hover {
 }
 
 .signModal{
-  position: absolute;
+  text-align: center;
+  margin: 1%;
+  width: 100%;
+  /* z-index: 15;
+  position: absolute; */
+
+  /* padding: 1%;
   background-color: white;
-  top : 90px;
-  right: 10%;
-  width: 140px;
-  -webkit-box-shadow: 6px 3px 15px -12px rgba(0,0,0,0.47);
--moz-box-shadow: 6px 3px 15px -12px rgba(0,0,0,0.47);
-box-shadow: 6px 3px 15px -12px rgba(0,0,0,0.47);
+  top : 0;
+  padding-top : 90px;
+  right: 44%;
+  width: 140px; */
+  /* -webkit-box-shadow: 6px 3px 15px -12px rgba(0,0,0,0.47);
+  -moz-box-shadow: 6px 3px 15px -12px rgba(0,0,0,0.47);
+  box-shadow: 6px 3px 15px -12px rgba(0,0,0,0.47); */
   /* margin-top: 45px;
   margin-left: 38%;
   width: 120px; */
@@ -356,46 +364,57 @@ box-shadow: 6px 3px 15px -12px rgba(0,0,0,0.47);
 /* =======================
 HOME
 ======================= */
-
-.slideshow {
+.containerSlide{
+  width: 100%;
+  height: 85vh;
+}
+/* .slideshow { */
 /* cursor: url(https://bucket1.format-assets.com/theme_versions/1297352/assets/cursors/left/cursor_black_m.cur), w-resize;
 cursor: url(https://bucket1.format-assets.com/theme_versions/1297352/assets/cursors/left/cursor_black_m.png) 0 24, w-resize;
 cursor: url(https://bucket1.format-assets.com/theme_versions/1297352/assets/cursors/right/cursor_black_m.cur), e-resize;
 cursor: url(https://bucket1.format-assets.com/theme_versions/1297352/assets/cursors/right/cursor_black_m.png) 22 24, e-resize; */
 /* position: absolute; */
-display: flex;
+/* display: flex;
 flex-direction: row;
-left: 0;
+left: 0; */
 /* padding-top: 55px; */
-width: 100%;
-height: 85vh;
+/* width: 100%;
+height: 85vh; */
   /* animation-duration: 25s;
 animation-name: slidein; */
 
--webkit-transition: opacity 0.3s ease-out;
+/* -webkit-transition: opacity 0.3s ease-out;
   -moz-transition: opacity 0.3s ease-out;
   -o-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
-}
-.testSlideLeft{
+} */
+/* .slide{
+  width: 100%;
+  height: 85vh;
+  left:0;
+  transform: translate(-50% , -50%);
+} */
+/* .testSlideLeft{
   cursor: url(https://bucket1.format-assets.com/theme_versions/1297352/assets/cursors/left/cursor_black_m.cur), w-resize;
   cursor: url(https://bucket1.format-assets.com/theme_versions/1297352/assets/cursors/left/cursor_black_m.png) 0 24, w-resize;
   z-index: 8;
-  width: 50%;
+  
   position: absolute;
+  width: 50%;
   height: 85vh;
   left: 0;
-}
-.testSlideRight{
+} */
+/* .testSlideRight{
   /* cursor: url(../pix/cursor_ppk.gif),auto; */
-  cursor: url(https://bucket1.format-assets.com/theme_versions/1297352/assets/cursors/right/cursor_black_m.cur), e-resize;
+  /* cursor: url(https://bucket1.format-assets.com/theme_versions/1297352/assets/cursors/right/cursor_black_m.cur), e-resize;
   cursor: url(https://bucket1.format-assets.com/theme_versions/1297352/assets/cursors/right/cursor_black_m.png) 22 24, e-resize;
   z-index: 8;
   width: 50%;
   position: absolute;
+  width: 50%;
   height: 85vh;
-  right: 0;
-}
+  right: 0; */
+
 .slide{
 	width:100%;
 	height:100%;
@@ -443,7 +462,7 @@ PRODUCTS
     height: 40vh
   }
 }*/
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: 1430px) {
   .products{
     width: 17%;
     padding: 1%
@@ -594,8 +613,17 @@ Collection
   height: 400px;
   object-fit: cover;
 }
-
-
+.collecSeason{
+  display: flex;
+  justify-content: center;
+}
+.season{
+  margin: 1%;
+  cursor: pointer;
+}
+.season:hover{
+  color: #666666
+}
 @media only screen and (min-width: 2176px) {
   .collecPic{
     width: 500px;

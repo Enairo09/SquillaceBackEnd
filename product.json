@@ -1,73 +1,115 @@
 {
     "products": [
         {
-            "name": "Top zippé au dos ",
+            "name": "Open Sleeve Top",
             "price": 1124.99,
             "type": "Top",
+            "description": "Sleeveless top. Back metal zip closure. See-through cutouts.",
             "img": "0.jpg",
             "enabled": true
         },
         {
-            "name": "Robe plissée",
+            "name": "Pleated Dress",
             "price": 2500,
-            "type": "Robe",
+            "type": "Dress",
+            "description": "Silver dress with round neck. Back leather pleated detail.",
             "img": "1.jpg",
             "enabled": true
         },
         {
-            "name": "Veste cuir",
+            "name": "Leather Jacket",
             "price": 1700,
-            "type": "Veste",
+            "type": "Jacket",
+            "description": "Crop jacket with leather pleated details. Diagonal zip at front. Long mesh sleeves.",
             "img": "2.jpg",
             "enabled": true
         },
         {
-            "name": "Veste longue transparente",
+            "name": "Long See-through Jacket",
             "price": 1479,
-            "type": "Veste",
+            "type": "Jacket",
+            "description": "Long jacket with cutouts details. Round collar. Leather shoulder and sleeves.",
             "img": "3.jpg",
             "enabled": true
         },
         {
-            "name": "Top brodé main",
+            "name": "Leather Top with Pearls",
             "price": 870,
             "type": "Top",
+            "description": "Sleeveless leather top with hand-stitched pearls. Suedes cutouts on the sides.",
             "img": "4.jpg",
             "enabled": true
         },
         {
-            "name": "Veste sans manche",
+            "name": "Oversized Trousers",
             "price": 1300,
-            "type": "Veste",
+            "type": "Trousers",
+            "description": "Leather trousers with cutouts and oversize look.",
             "img": "5.jpg",
             "enabled": true
         },
         {
-            "name": "Robe cuir et soie",
+            "name": "Long Mesh Dress",
             "price": 1100,
-            "type": "Robe",
+            "type": "Dress",
+            "description": "Crop jacket with leather pleated details. Wool moderns cutouts. Front metal zip. Long sleeves.",
             "img": "6.jpg",
             "enabled": true
         },
         {
-            "name": "Blazer plissé",
+            "name": "Bomber Jacket",
             "price": 1689,
-            "type": "Veste",
+            "type": "Jacket",
+            "description": "Oversized jacket with pleated details. Diagonal zip at front. Long mesh sleeves.",
             "img": "7.jpg",
             "enabled": true
         },
         {
-            "name": "Top en cuir",
+            "name": "Leather Pleated Top",
             "price": 900,
             "type": "Top",
+            "description": "Sleeveless top. Round leather collar. Leather and silk cutouts. Front pleat.",
             "img": "8.jpg",
             "enabled": true
         },
         {
-            "name": "Robe en soie",
+            "name": "Long silk dress",
             "price": 850,
-            "type": "Top",
+            "type": "Dress",
+            "description": "Long V neck dress. Front metal zip. Long leather sleeves.",
             "img": "9.jpg",
+            "enabled": true
+        },
+        {
+            "name": "Wool Grey Coat",
+            "price": 2490,
+            "type": "Coat",
+            "description": "Grey coat with black leather cutouts. Diagonal zip at front.",
+            "img": "10.jpg",
+            "enabled": true
+        },
+        {
+            "name": "Long Skirt",
+            "price": 990,
+            "type": "Skirt",
+            "description": "High waisted long skirt with leather belt.",
+            "img": "11.jpg",
+            "enabled": true
+        },
+        {
+            "name": "Mesh Top",
+            "price": 2400,
+            "type": "Top",
+            "description": "Round neck mesh top. Removable leather sleeves with hand-stitched pearls.",
+            "img": "12.jpg",
+            "enabled": true
+        },
+        {
+            "name": "Silver Skirt",
+            "price": 800,
+            "type": "Skirt",
+            "description": "High waisted long skirt with pleated details on the front.",
+            "img": "13.jpg",
             "enabled": true
         }
     ]

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import Slideshow from './Slide';
 // import { useMediaQuery } from 'react-responsive';
 
 function mapStateToProps(state) {
@@ -9,7 +10,9 @@ function mapStateToProps(state) {
 const HomePage = (props) => {
 
     const [picList, setpicList] = useState([
-        'homepic.png', 'homepic1.png', 'homepic2.png', 'homepic3.png', 'homepic4.png', 'homepic5.png', 'homepic6.png', 'homepic7.png', 'homepic8.jpg', 'homepic9.jpg', 'homepic10.jpg'
+        'homepic.png', 'homepic1.jpg', 'homepic2.jpg', 'homepic3.jpg', 'homepic4.jpg', 'homepic5.jpg', 'homepic6.jpg',
+        //'homepic7.jpg', 'homepic8.jpg',
+        //'homepic9.jpg', 'homepic10.jpg'
     ]);
 
     const [count, setcount] = useState(0);
@@ -20,6 +23,25 @@ const HomePage = (props) => {
     // const isPortrait = useMediaQuery({ orientation: 'portrait' })
     // const isRetina = useMediaQuery({ minResolution: '2dppx' })
     //je passe les photos
+
+    // useEffect(() => {
+    //     var i = 0;
+    //     // var images = { picList };
+    //     var time = 2000;
+    //     changeImg(picList, time, i);
+    // }, []);
+
+
+    let changeImg = (images, time, i) => {
+        document.getElementById("slide").src = images[i];
+        //document.slide.src = images[i];
+        if (i < (images.length - 1)) {
+            i++;
+        } else {
+            i = 0;
+        }
+        setTimeout(changeImg(), time);
+    }
     var nextPic = (arg) => {
         if (count <= (picList.length - 2)) {
             setcount(count + 1)
@@ -36,13 +58,16 @@ const HomePage = (props) => {
         }
     }
 
+
     return (
         <div style={{ paddingTop: 90 }}>
-            <div className='slideshow'  >
-                <div className="testSlideLeft" onClick={(e) => { prevPic(e.target.value) }}> </div>
+
+            {/* <div className='slideshow'  > */}
+            <Slideshow />
+            {/* <div className="testSlideLeft" onClick={(e) => { prevPic(e.target.value) }}> </div>
                 <div className="testSlideRight" onClick={(e) => { nextPic(e.target.value) }}> </div>
-                <img className="slide" id='homeSlide0' src={picList[count]}></img>
-            </div>
+                <img className="slide" id='homeSlide0' src={picList[count]}></img> */}
+            {/* </div> */}
 
             <div className="footer">
                 <a href="https://www.facebook.com/martina.squillacedesigner" target="_blanck" alt=''>
