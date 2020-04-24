@@ -420,6 +420,10 @@ animation-name: slidein; */
 	height:100%;
   object-fit: cover;
   z-index: 7;
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+  -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+  user-select: none; /* Propriété standard */
 }
 
 .footer{
@@ -492,6 +496,10 @@ PRODUCTS
   width: 100%;
   height: 400px;
   object-fit: cover;
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+  -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+  user-select: none; /* Propriété standard */
 }
 
 
@@ -572,6 +580,10 @@ ABOUT
   padding: 7%;
   height: 80vh;
   object-fit: cover;
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+  -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+  user-select: none; /* Propriété standard */
 }
 .aboutText{
   width: 86%;
@@ -612,6 +624,10 @@ Collection
   width: 250px;
   height: 400px;
   object-fit: cover;
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+  -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+  user-select: none; /* Propriété standard */
 }
 .collecSeason{
   display: flex;
@@ -653,6 +669,10 @@ PRODUCT CARD
   margin-right: 3%;
   margin-left: 10%;
   margin-bottom: 10%;
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+  -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+  user-select: none; /* Propriété standard */
 }
 
 .backToSearch{
@@ -2109,6 +2129,10 @@ COLLEC SLIDE
   width:100%;
   height:85vh;
   object-fit: contain;
+  -moz-user-select: none; /* Firefox */
+ -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+ -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+ user-select: none; /* Propriété standard */
 }
 
 .closeIcone{
