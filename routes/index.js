@@ -53,11 +53,20 @@ transporter.verify((error, success) => {
 /* GET home page. */
 router.get('/', async function (req, res, next) {
   console.log('hello', myJson.products);
+
   await productModel.deleteMany({ __v: 0 },
     function (error) {
       console.log('je remets a zero ma bdd')
     });
   for (var i = 0; i < myJson.products.length; i++) {
+    // let arrayTemp = myJson.products[i].img
+    // // console.log('arrayTEMP', arrayTemp)
+    // let array = arrayTemp.split(' ');
+    // for (var j = 0; j < array.length; j++) {
+    //   array.push(arrayTemp[j]);
+    // }
+    // console.log('array', array)
+
     let newproduct = new productModel({
       name: myJson.products[i].name,
       price: myJson.products[i].price,

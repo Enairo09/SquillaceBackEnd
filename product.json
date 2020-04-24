@@ -13,7 +13,7 @@
             "price": 2500,
             "type": "Dress",
             "description": "Silver dress with round neck. Back leather pleated detail.",
-            "img": "1.jpg",
+            "img": "1.jpg 1(1).jpg",
             "enabled": true
         },
         {
@@ -21,7 +21,7 @@
             "price": 1700,
             "type": "Jacket",
             "description": "Crop jacket with leather pleated details. Diagonal zip at front. Long mesh sleeves.",
-            "img": "2.jpg",
+            "img": "2.jpg 2(1).jpg",
             "enabled": true
         },
         {
@@ -29,7 +29,7 @@
             "price": 1479,
             "type": "Jacket",
             "description": "Long jacket with cutouts details. Round collar. Leather shoulder and sleeves.",
-            "img": "3.jpg",
+            "img": "3.jpg 3(1).jpg 3(2).jpg",
             "enabled": true
         },
         {
@@ -37,7 +37,7 @@
             "price": 870,
             "type": "Top",
             "description": "Sleeveless leather top with hand-stitched pearls. Suedes cutouts on the sides.",
-            "img": "4.jpg",
+            "img": "4.jpg '4(1).jpg 4(2).jpg",
             "enabled": true
         },
         {
@@ -45,7 +45,7 @@
             "price": 1300,
             "type": "Trousers",
             "description": "Leather trousers with cutouts and oversize look.",
-            "img": "5.jpg",
+            "img": "5.jpg 5(1).jpg",
             "enabled": true
         },
         {
@@ -53,7 +53,7 @@
             "price": 1100,
             "type": "Dress",
             "description": "Crop jacket with leather pleated details. Wool moderns cutouts. Front metal zip. Long sleeves.",
-            "img": "6.jpg",
+            "img": "6.jpg 6(1).jpg 6(2).jpg",
             "enabled": true
         },
         {
@@ -61,7 +61,7 @@
             "price": 1689,
             "type": "Jacket",
             "description": "Oversized jacket with pleated details. Diagonal zip at front. Long mesh sleeves.",
-            "img": "7.jpg",
+            "img": "7.jpg 7(1).jpg 7(2).jpg 7(3).jpg",
             "enabled": true
         },
         {
@@ -77,7 +77,7 @@
             "price": 850,
             "type": "Dress",
             "description": "Long V neck dress. Front metal zip. Long leather sleeves.",
-            "img": "9.jpg",
+            "img": "9.jpg 9(1).jpg",
             "enabled": true
         },
         {
@@ -85,7 +85,7 @@
             "price": 2490,
             "type": "Coat",
             "description": "Grey coat with black leather cutouts. Diagonal zip at front.",
-            "img": "10.jpg",
+            "img": "10.jpg 10(1).jpg 10(2).jpg",
             "enabled": true
         },
         {
@@ -93,7 +93,7 @@
             "price": 990,
             "type": "Skirt",
             "description": "High waisted long skirt with leather belt.",
-            "img": "11.jpg",
+            "img": "11.jpg 11(1).jpg",
             "enabled": true
         },
         {
@@ -101,7 +101,7 @@
             "price": 2400,
             "type": "Top",
             "description": "Round neck mesh top. Removable leather sleeves with hand-stitched pearls.",
-            "img": "12.jpg",
+            "img": "12.jpg 12(1).jpg",
             "enabled": true
         },
         {
@@ -109,7 +109,7 @@
             "price": 800,
             "type": "Skirt",
             "description": "High waisted long skirt with pleated details on the front.",
-            "img": "13.jpg",
+            "img": "13.jpg 13(1).jpg",
             "enabled": true
         }
     ]

@@ -40,10 +40,11 @@ const Product = (props) => {
 
 
   var prodList = productList.map((product, i) => {
-
+    let arrayTemp = product.img
+    let array = arrayTemp.split(' ');
     return (
       <span style={{ float: "left" }} className='products' key={i}  >
-        <img onClick={(e) => { console.log(e.target.id); goToProdCard((e.target.id)) }} id={product._id} className="productPic" src={product.img} />
+        <img onClick={(e) => { console.log(e.target.id); goToProdCard((e.target.id)) }} id={product._id} className="productPic" src={array[0]} />
         <h4>{product.name}</h4>
         <span>
           <h5>{product.price}€</h5>

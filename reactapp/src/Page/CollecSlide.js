@@ -30,6 +30,7 @@ const CollecSlide = (props) => {
             setcount(listToCheck.length - 1);
         }
     }
+    //const func = (event) => console.log('move', event.type, event.movementX);
 
     return (
 
@@ -41,14 +42,16 @@ const CollecSlide = (props) => {
                         <FontAwesomeIcon className="fa-2x closeIcone" icon={faTimes} onClick={(e) => props.setshow(false)} />
                         <FontAwesomeIcon className="fa-2x leftIcone" icon={faChevronLeft} onClick={(e) => goBack()} />
                         <FontAwesomeIcon className="fa-2x rightIcone" icon={faChevronRight} onClick={(e) => goNext()} />
-                        <img className="slidecollec" src={fw19picList[count]} alt="img1" />
+                        <img className="slidecollec" src={fw19picList[count]} alt="img1" onClick={(e) => goNext()} />
                     </div>
                     : props.collectionToShowID === "ss20" ?
                         <div>
                             <FontAwesomeIcon className="fa-2x closeIcone" icon={faTimes} onClick={(e) => props.setshow(false)} />
                             <FontAwesomeIcon className="fa-2x leftIcone" icon={faChevronLeft} onClick={(e) => goBack()} />
                             <FontAwesomeIcon className="fa-2x rightIcone" icon={faChevronRight} onClick={(e) => goNext()} />
-                            <img className="slidecollec" src={ss20picList[count]} alt="img1" />
+                            <img className="slidecollec" src={ss20picList[count]} alt="img1"
+                                //onMouseMove={func}
+                                onClick={(e) => goNext()} />
                         </div>
                         : null}
 

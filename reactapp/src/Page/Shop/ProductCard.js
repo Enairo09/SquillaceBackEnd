@@ -6,8 +6,18 @@ import { connect } from 'react-redux';
 import useLocalStorage from '../../Functions/useLocalStore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/fontawesome-free-solid';
+//import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import checkIfExist from '../../Functions/checkIfExist';
 import headCount from '../../Functions/headCount';
+import ProductSlide from '../ProductSlide';
+//import { Slide, slideRef } from 'react-slideshow-image';
+// const proprietes = {
+//     duration: 10000,
+//     transitionDuration: 500,
+//     infinite: true,
+//     indicators: true,
+//     // arrows: true
+// }
 
 // function mapStateToProps(state) {
 //     console.log('shop page get store', state)
@@ -28,7 +38,8 @@ const ProductCard = (props) => {
         img: '',
     });
     const [currentBasket, setcurrentBasket] = useState([]);
-
+    const [count, setcount] = useState(0);
+    const [imgToDisplay, setimgToDisplay] = useState([]);
     const [productToBasket, setproductToBasket] = useState({
 
         productID: '',
@@ -40,6 +51,9 @@ const ProductCard = (props) => {
         size: ''
     });
     const [showPopup, setshowPopup] = useState(false);
+
+    const [fullScreen, setfullScreen] = useState(false)
+    const [imgToPass, setimgToPass] = useState('')
 
     //je recupere mon produit
     useEffect(() => {
@@ -61,12 +75,19 @@ const ProductCard = (props) => {
                 .then(response => response.json())
                 .then(data => {
                     console.log('retour de get one', data)
+                    let arrayTemp = data.products.img
+                    let array = arrayTemp.split(' ');
+                    setimgToDisplay(array);
+                    console.log('arary', array)
                     setproduct({ productID: data.products._id, name: data.products.name, price: data.products.price, description: data.products.description, type: data.products.type, img: data.products.img })
                     setproductToBasket({ ...productToBasket, productID: data.products._id, name: data.products.name, type: data.products.type, description: data.products.description, img: data.products.img, price: data.products.price })
                     if (data.orderID === null) {
+                        console.log('test', imgToDisplay[count])
+
                         setcurrentBasket(null);
                     } else {
                         console.log('ce que jenregistre comme panier en cours', data.basket)
+
                         //await localStorage.setItem('order', JSON.stringify(data.orderID));
                         setcurrentBasket(data.basket);
                     }
@@ -74,7 +95,6 @@ const ProductCard = (props) => {
                 .catch(error => console.log("erreur fetch", error));
         }
         fetchData();
-
     }, []);
 
     var addProduct = async (e) => {
@@ -141,28 +161,71 @@ const ProductCard = (props) => {
         }
     };
 
+    // let goNext = () => {
+    //     if (count < imgToDisplay.length - 1) {
+    //         setcount(count + 1);
+    //     } else {
+    //         setcount(0);
+    //     }
+    // }
+    // let goBack = () => {
+    //     if (count !== 0) {
+    //         setcount(count - 1);
+    //     } else {
+    //         setcount(imgToDisplay.length - 1);
+    //     }
+    // }
+
+    let showFullScreen = (id) => {
+        setimgToPass(id);
+        setfullScreen(true);
+    }
+
+    var slideList = imgToDisplay.map((imgSource, i) => {
+
+        return (
+
+
+            <img className="productsPic" src={`/${imgSource}`} alt="img1" onClick={(e) => showFullScreen(i)} />
+
+
+            //      <div className="each-slide">
+            //      <div >
+            //          {/* <div className="testSlideLeft" onClick={(e) => { e.slideRef.goBack() }}> </div>
+            //          <div className="testSlideRight" onClick={(e) => { e.slideRef.goNext() }}> </div> */}
+            //          <img className="productsPic" src={`/${imgSource}`} alt="img1" />
+            //      </div>
+            //  </div>
+        )
+    })
+
     return (
         <div className='content'>
+            {fullScreen ? <ProductSlide collectionToShowID={imgToPass} setshow={setfullScreen} arrayToDisplay={imgToDisplay} /> : null}
+
             <a href='/products' className="backToSearch">
                 <FontAwesomeIcon className="backArrow" icon={faArrowLeft} />
                 <h5 className="backCollec" >Back to Collection</h5>
             </a>
 
             <div className="productCard">
-
-                <img className='productsPic' src={`/${product.img}`} />
+                {/* <FontAwesomeIcon className="fa-2x leftProdCard" icon={faChevronLeft} onClick={(e) => goBack()} />
+                <img className='productsPic' src={`/${imgToDisplay[count]}`} />
+                {checkIfExist(imgToDisplay[count + 1]) ? <img className='productsPic' src={`/${imgToDisplay[count + 1]}`} /> : null}
+                <FontAwesomeIcon className="fa-2x rightProdCard" icon={faChevronRight} onClick={(e) => goNext()} /> */}
+                {/* <Slide {...proprietes} className="productSlide">
+                    {slideList}
+                </Slide> */}
+                <div className="productSlide">
+                    {slideList}
+                </div>
                 {showPopup ?
                     <Popup
                         text={product.name}
                     />
                     : null
                 }
-                {/* {showPopupFail.show ?
-                    <PopUpFail
-                        field={showPopupFail.field}
-                    />
-                    : null
-                } */}
+
                 <div className='productsText'>
                     <h3>{product.name}</h3>
                     <div>
