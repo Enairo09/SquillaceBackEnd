@@ -52,8 +52,11 @@ app.use(express.static(path.join(__dirname, 'reactapp/build')));
 if (process.env.NODE_ENV === 'production') {
   //app.use(express.static(path.join(__dirname, 'reactapp/build'))) ||
   app.use(express.static('reactapp/build'));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'reactapp/build'));
+  app.get('/*', (req, res) => {
+    // res.sendFile(path.join(__dirname, 'reactapp/build'));
+
+    res.sendFile(path.join(__dirname, 'reactapp/build', 'index.html'));
+
   });
 }
 // catch 404 and forward to error handler
