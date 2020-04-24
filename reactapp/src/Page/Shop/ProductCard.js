@@ -201,7 +201,7 @@ const ProductCard = (props) => {
 
     return (
         <div className='content'>
-            {fullScreen ? <ProductSlide collectionToShowID={imgToPass} setshow={setfullScreen} arrayToDisplay={imgToDisplay} /> : null}
+            {fullScreen ? <ProductSlide className="hideOnPhone" collectionToShowID={imgToPass} setshow={setfullScreen} arrayToDisplay={imgToDisplay} /> : null}
 
             <a href='/products' className="backToSearch">
                 <FontAwesomeIcon className="backArrow" icon={faArrowLeft} />
