@@ -184,7 +184,7 @@ const Cart = (props) => {
                     {checkIfExist(userID) ? null :
                         <div>
                             <h5 className="marg">Log in to order with your account</h5>
-                            <Link to="/login" className="cartLink">
+                            <Link to="/signin" className="cartLink">
                                 <button className="btnCart" >SIGN IN</button>
                             </Link>
                         </div>

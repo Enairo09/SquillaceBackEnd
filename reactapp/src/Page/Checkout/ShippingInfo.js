@@ -217,7 +217,7 @@ const ShippingInfo = (props) => {
                 ({totalProdQty} items)
                 </h5>
                     <h5 className="h5marg">Log in to order with your account</h5>
-                    <Link to="/login" className="cartLink">
+                    <Link to="/checkout" className="cartLink">
                         <button className="btnCart" >SIGN IN</button>
                     </Link>
                     <div className="totalCartElments">

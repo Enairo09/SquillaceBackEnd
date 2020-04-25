@@ -10,7 +10,6 @@ const ProductSlide = (props) => {
 
     const [count, setcount] = useState(props.collectionToShowID);
 
-
     let goNext = () => {
         if (count < picList.length - 1) {
             setcount(count + 1);
@@ -34,7 +33,7 @@ const ProductSlide = (props) => {
                 <FontAwesomeIcon className="fa-2x closeIcone" icon={faTimes} onClick={(e) => props.setshow(false)} />
                 <FontAwesomeIcon className="fa-2x leftIcone" icon={faChevronLeft} onClick={(e) => goBack()} />
                 <FontAwesomeIcon className="fa-2x rightIcone" icon={faChevronRight} onClick={(e) => goNext()} />
-                <img className="slideproduct" src={`/${picList[count]}`} alt="img1" onClick={(e) => goNext()} />
+                <img className="slideproduct" src={`/${picList[count].ref}`} alt="img1" onClick={(e) => goNext()} />
             </div>
         </div>
     )
