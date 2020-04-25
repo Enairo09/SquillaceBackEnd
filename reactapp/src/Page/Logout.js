@@ -17,7 +17,7 @@ const Logout = (props) => {
             <form className="form logoutBloc">
                 <h2>You're logged Out !</h2>
                 <Link to='/products'>Back to Shopping</Link>
-                <img className="slide logout" id='homeSlide0' src='homepic8.jpg'></img>
+                <img className="slide logout" id='homeSlide0' src='home/homepic1.jpg'></img>
             </form>
         </div>
     );

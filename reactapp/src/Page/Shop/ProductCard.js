@@ -75,12 +75,12 @@ const ProductCard = (props) => {
                 .then(response => response.json())
                 .then(data => {
                     console.log('retour de get one', data)
-                    let arrayTemp = data.products.img
-                    let array = arrayTemp.split(' ');
-                    setimgToDisplay(array);
-                    console.log('arary', array)
+                    // let arrayTemp = data.products.img
+                    // let array = arrayTemp.split(' ');
+                    setimgToDisplay(data.products.img);
+                    // console.log('arary', array)
                     setproduct({ productID: data.products._id, name: data.products.name, price: data.products.price, description: data.products.description, type: data.products.type, img: data.products.img })
-                    setproductToBasket({ ...productToBasket, productID: data.products._id, name: data.products.name, type: data.products.type, description: data.products.description, img: data.products.img, price: data.products.price })
+                    setproductToBasket({ ...productToBasket, productID: data.products._id, name: data.products.name, type: data.products.type, description: data.products.description, img: data.products.img[0].ref, price: data.products.price })
                     if (data.orderID === null) {
                         console.log('test', imgToDisplay[count])
 
@@ -103,6 +103,7 @@ const ProductCard = (props) => {
         if (checkIfExist(currentBasket)) {
             //j'ai un panier en cours, j'udpate la quantité et le prix de mon product ==== UPDATE ORDER
             let url = '/api/add-product-to-order';
+            console.log('click')
             await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -186,7 +187,7 @@ const ProductCard = (props) => {
         return (
 
 
-            <img className="productsPic" src={`/${imgSource}`} alt="img1" onClick={(e) => showFullScreen(i)} />
+            <img className="productsPic" src={`/${imgSource.ref}`} alt="img1" onClick={(e) => showFullScreen(i)} />
 
 
             //      <div className="each-slide">

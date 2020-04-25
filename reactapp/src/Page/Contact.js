@@ -34,7 +34,7 @@ const Contact = () => {
                     <h3 style={{ fontSize: 20, marginLeft: 20 }}>Contact Us</h3>
                 </div>
                 <div className="contactBloc">
-                    <img className="contactPic" src="contact.jpg" alt='' />
+                    <img className="contactPic" src="/contact.jpg" alt='' />
                     <form className="contactForm" onSubmit={(e) => handleForm(e)}>
                         {/* {showPopupFail.show ?
                         <PopUpFail

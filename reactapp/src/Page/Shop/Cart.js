@@ -126,7 +126,6 @@ const Cart = (props) => {
     }
 
     var prodList = productList.map((product, i) => {
-
         return (
             <div className='productsCart' key={i}>
                 <div className='productsCartPicTitle'>
@@ -216,7 +215,7 @@ const Cart = (props) => {
                 <Link to="/signin">
                     <h3 style={{ margin: 20 }} >Sign In</h3>
                 </Link>
-                <img className="emptyCartPic" src='homepic.png' />
+                <img className="emptyCartPic" src='home/homepic1.jpg' />
             </div >
         )
     }

@@ -59,20 +59,21 @@ router.get('/', async function (req, res, next) {
       console.log('je remets a zero ma bdd')
     });
   for (var i = 0; i < myJson.products.length; i++) {
-    // let arrayTemp = myJson.products[i].img
-    // // console.log('arrayTEMP', arrayTemp)
-    // let array = arrayTemp.split(' ');
-    // for (var j = 0; j < array.length; j++) {
-    //   array.push(arrayTemp[j]);
-    // }
-    // console.log('array', array)
+    let arrayTemp = myJson.products[i].img
+    // console.log('arrayTEMP', arrayTemp)
+    let array = arrayTemp.split(' ');
+    let arrayToPrint = []
+    for (var j = 0; j < array.length; j++) {
+      arrayToPrint.push({ ref: array[j] });
+    }
+    console.log('array', arrayToPrint)
 
     let newproduct = new productModel({
       name: myJson.products[i].name,
       price: myJson.products[i].price,
       type: myJson.products[i].type,
       description: myJson.products[i].description,
-      img: myJson.products[i].img,
+      img: arrayToPrint,
       enabled: myJson.products[i].enabled
     });
     await newproduct.save(
@@ -290,7 +291,7 @@ router.post('/cart', async function (req, res, next) {
 
 //Je crée un nouvel order : 
 router.post('/createorder', async function (req, res, next) {
-  console.log('user ID NULL = ', req.body.id)
+  console.log('user ID NULL = ', req.body)
   let newOrder;
   if (allOptions(req.body.id)) {
     newOrder = new orderModel({

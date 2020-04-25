@@ -16,7 +16,7 @@ const Success = (props) => {
                     <h2>Congrats ! You're purchase is now on the way !</h2>
                     <Link to='/products'>Back to Shopping</Link>
                     <Link to='/myaccount'>See my order</Link>
-                    <img className="slide logout" id='homeSlide0' src='homepic8.jpg'></img>
+                    <img className="slide logout" id='homeSlide0' src='home/homepic1.jpg'></img>
                 </form>
             </div>
         );
@@ -28,7 +28,7 @@ const Success = (props) => {
                     <h2>Congrats ! You're purchase is now on the way !</h2>
                     <Link to='/products'>Back to Shopping</Link>
                     <Link to='/signin'>Create an account</Link>
-                    <img className="slide logout" id='homeSlide0' src='homepic8.jpg'></img>
+                    <img className="slide logout" id='homeSlide0' src='home/homepic1.jpg'></img>
                 </form>
             </div>
         );

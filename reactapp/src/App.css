@@ -748,8 +748,14 @@ PRODUCT CARD
   font-size: large;
   margin-top: 7%;
   padding: 8px;
+  width: 100%; 
 }
 
+.add-btn:hover{
+  color: black;
+  border-color: black;
+  cursor: pointer;
+}
 .inputCard{
   /* -webkit-appearance: none;
 	-moz-appearance: none;
