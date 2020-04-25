@@ -1312,7 +1312,17 @@ CONTACT PAGE
   }
 
 }
-
+/* ==============================
+POP UP MSG ============================== */
+.popupmsg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon{
+  margin-left: 3%;
+  margin-right: 3%;
+}
 /* ==============================
 SIGN IN UP PAGE
 ============================== */
