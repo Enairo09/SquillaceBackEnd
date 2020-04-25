@@ -7,8 +7,14 @@ import { faShower } from '@fortawesome/fontawesome-free-solid';
 const ProductSlide = (props) => {
 
     const [picList, setpicList] = useState(props.arrayToDisplay);
-
+    const [hideArrow, sethideArrow] = useState(false);
     const [count, setcount] = useState(props.collectionToShowID);
+
+    useEffect(() => {
+        if (picList.length === 1) {
+            sethideArrow(true)
+        }
+    }, []);
 
     let goNext = () => {
         if (count < picList.length - 1) {
@@ -31,8 +37,8 @@ const ProductSlide = (props) => {
         <div className='popupprod'>
             <div>
                 <FontAwesomeIcon className="fa-2x closeIcone" icon={faTimes} onClick={(e) => props.setshow(false)} />
-                <FontAwesomeIcon className="fa-2x leftIcone" icon={faChevronLeft} onClick={(e) => goBack()} />
-                <FontAwesomeIcon className="fa-2x rightIcone" icon={faChevronRight} onClick={(e) => goNext()} />
+                {hideArrow ? null : <FontAwesomeIcon className="fa-2x leftIcone" icon={faChevronLeft} onClick={(e) => goBack()} />}
+                {hideArrow ? null : <FontAwesomeIcon className="fa-2x rightIcone" icon={faChevronRight} onClick={(e) => goNext()} />}
                 <img className="slideproduct" src={`/${picList[count].ref}`} alt="img1" onClick={(e) => goNext()} />
             </div>
         </div>

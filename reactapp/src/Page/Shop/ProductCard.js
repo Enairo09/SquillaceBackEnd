@@ -28,7 +28,7 @@ const ProductCard = (props) => {
 
     const [userID, setuserID] = useLocalStorage('user', []);
     const [orderID, setorderID] = useLocalStorage('order', '');
-    //const [orderID, setorderID] = useState(props.orderID);
+    const [hideArrow, sethideArrow] = useState(false);
 
     const [product, setproduct] = useState({
         id: '',
@@ -80,6 +80,9 @@ const ProductCard = (props) => {
                     // let arrayTemp = data.products.img
                     // let array = arrayTemp.split(' ');
                     setimgToDisplay(data.products.img);
+                    if (data.products.img.length === 1) {
+                        sethideArrow(true)
+                    }
                     // console.log('arary', array)
                     setproduct({ productID: data.products._id, name: data.products.name, price: data.products.price, description: data.products.description, type: data.products.type, img: data.products.img })
                     setproductToBasket({ ...productToBasket, productID: data.products._id, name: data.products.name, type: data.products.type, description: data.products.description, img: data.products.img[0].ref, price: data.products.price })
@@ -212,10 +215,10 @@ const ProductCard = (props) => {
             </a>
 
             <div className="productCard">
-                <FontAwesomeIcon className="fa-2x leftProdCard" icon={faChevronLeft} onClick={(e) => goBack()} />
+                {hideArrow ? null : <FontAwesomeIcon className="fa-2x leftProdCard" icon={faChevronLeft} onClick={(e) => goBack()} />}
                 <img className='productsPic' src={`/${imgToDisplay[count].ref}`} onClick={(e) => showFullScreen(`/${imgToDisplay[count].ref}`)} />
                 {/* {checkIfExist(imgToDisplay[count + 1]) ? <img className='productsPic' src={`/${imgToDisplay[count + 1]}`} /> : null} */}
-                <FontAwesomeIcon className="fa-2x rightProdCard" icon={faChevronRight} onClick={(e) => goNext()} />
+                {hideArrow ? null : <FontAwesomeIcon className="fa-2x rightProdCard" icon={faChevronRight} onClick={(e) => goNext()} />}
                 {/* <Slide {...proprietes} className="productSlide">
                     {slideList}
                 </Slide> */}
