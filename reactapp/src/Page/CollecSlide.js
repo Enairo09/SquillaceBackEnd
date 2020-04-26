@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { set } from 'mongoose';
@@ -13,8 +13,38 @@ const CollecSlide = (props) => {
         "ss20/1.jpg", "ss20/2.jpg", "ss20/3.jpg", "ss20/4.jpg", "ss20/5.jpg", "ss20/6.jpg", "ss20/7.jpg", "ss20/8.jpg", "ss20/9.jpg", "ss20/10.jpg", "ss20/11.jpg", "ss20/12.jpg", "ss20/13.jpg", "ss20/14.jpg", "ss20/15.jpg", "ss20/16.jpg"
     ]);
     const [count, setcount] = useState(props.collectionToShowValue);
+    const prevRef = useRef();
+    useEffect(() => {
+        prevRef.current = count;
+    });
 
     let listToCheck = props.collectionToShowID === "fw19" ? fw19picList : ss20picList
+
+    const handleUserKeyPress = useCallback(event => {
+        const { key, keyCode } = event;
+        if (key === "ArrowRight") {
+            if (prevRef.current < listToCheck.length - 1) {
+                setcount(prevRef.current + 1);
+            } else {
+                setcount(0);
+            }
+        } else if (key === "ArrowLeft") {
+            if (prevRef.current !== 0) {
+                setcount(prevRef.current - 1);
+            } else {
+                setcount(listToCheck.length - 1);
+            }
+        } else if (key === "Escape") {
+            props.setshow(false)
+        }
+    }, []);
+
+    useEffect(() => {
+        document.addEventListener('keydown', handleUserKeyPress);
+        return () => {
+            window.removeEventListener('keydown', handleUserKeyPress);
+        };
+    }, []);
 
     let goNext = () => {
         if (count < listToCheck.length - 1) {
@@ -22,23 +52,21 @@ const CollecSlide = (props) => {
         } else {
             setcount(0);
         }
-    }
+    };
     let goBack = () => {
         if (count !== 0) {
             setcount(count - 1);
         } else {
             setcount(listToCheck.length - 1);
         }
-    }
-    let func = (e) => {
-        console.log("click")
-    }
+    };
+
     //const func = (event) => console.log('move', event.type, event.movementX);
 
     return (
 
 
-        <div className='popupcollec' onKeyPress={(e) => func(e.target)}>
+        <div className='popupcollec' >
             <div className='popupinnercollec'>
                 {props.collectionToShowID === "fw19" ?
                     <div>

@@ -23,6 +23,11 @@ const Header = (props) => {
     useEffect(() => {
         let tempUser = JSON.parse(window.localStorage.getItem('user'));
         console.log('user ==========', JSON.parse(window.localStorage.getItem('user')))
+        let urlCurrent = window.location.href
+        let url = urlCurrent.split("/")
+        setactive(url[3])
+        console.log("url", urlCurrent.split("/"))
+
         if (tempUser != null) {
             setuser(tempUser);
         }
@@ -38,10 +43,6 @@ const Header = (props) => {
         setsignModal(!signModal);
     }
 
-    let test = (e) => {
-        console.log(window.location.href)
-    }
-
     return (
         <header className='header'>
             <div className='title'>
@@ -53,29 +54,24 @@ const Header = (props) => {
             <div className="linksWeb">
                 <ul className='lienweb'>
                     {/* <FontAwesomeIcon className="linksPhone" icon={faMitten} /> */}
-                    <li className="linkHeader" >
-                        <Link to="/about"
-                            className={window.location.href === "https://martinasquillace.herokuapp.com/about" ? "active" : null}
-                            onClick={(e) => test('about')}>About </Link></li>
+                    <li className="linkHeader" ><Link to="/about" className={active === "about" ? "active" : null} onClick={(e) => setactive('about')}>About </Link></li>
                     <li className="linkHeader"
                     //onClick={e => signInUp(e)}
-                    ><Link className={window.location.href === "https://martinasquillace.herokuapp.com/collection" ? "active" : null} to='/collection' onClick={(e) => test('about')}>Collection</Link></li>
+                    ><Link className={active === "collection" ? "active" : null} to='/collection' onClick={(e) => setactive('collection')}>Collection</Link></li>
                     {/* <span className={`${signModal ? "signModal" : "collapsedModal"}`} onMouseLeave={e => signInUp(e)}>
                         <li className="linkHeader" onClick={e => signInUp(e)}><Link>Collection</Link></li>
                         <Link to="/myaccount" style={{ fontSize: 12 }}>Spring/Summer 20</Link>
                         <Link to="/myaccount" style={{ fontSize: 12 }}>Fall/Winter 19</Link>
                     </span> */}
-                    <li className="linkHeader" ><Link className={window.location.href === "https://martinasquillace.herokuapp.com/products" ? "active" : null} to="/products" onClick={(e) => test('about')}>Shop</Link></li>
-                    <li className="linkHeader" ><Link className={window.location.href === "https://martinasquillace.herokuapp.com/contact" ? "active" : null} to="/contact" >Contact</Link></li>
+                    <li className="linkHeader" ><Link className={active === "products" ? "active" : null} to="/products" onClick={(e) => setactive('products')}>Shop</Link></li>
+                    <li className="linkHeader" ><Link className={active === "contact" ? "active" : null} to="/contact" onClick={(e) => setactive('contact')}>Contact</Link></li>
                     {props.user ?
                         <span className="linkHeader">
                             <li className="linkHeader" >
-                                <Link to="/myaccount" className={window.location.href === "https://martinasquillace.herokuapp.com/myaccount" ? "active" : null}>My Account</Link></li>
+                                <Link to="/myaccount" className={active === "myaccount" ? "active" : null} onClick={(e) => setactive('myaccount')}>My Account</Link></li>
                         </span>
                         :
-                        <li className="linkHeader" >
-                            <Link to="/signin"
-                                className={window.location.href === "https://martinasquillace.herokuapp.com/signin" ? "active" : null}>Sign In</Link></li>}
+                        <li className="linkHeader" ><Link className={active === "signin" ? "active" : null} to="/signin" onClick={(e) => setactive('signin')}>Sign In</Link></li>}
                     {/* <li className="linkHeader" ><Link to="/signout">My Account</Link></li> */}
                     {/* <span className="linkHeader" >
                             <li className="linkHeader" onMouseOver={e => signInUp(e)} >My Account</li>
@@ -87,7 +83,7 @@ const Header = (props) => {
                         </span> */}
 
                     <li className="linkHeader" onClick={e => handleToggle(e)}>
-                        <Link to="/cart" className={window.location.href === "https://martinasquillace.herokuapp.com/cart" ? "active" : null}>
+                        <Link to="/cart" className={active === "cart" ? "active" : null} onClick={(e) => setactive('cart')}>
                             <FontAwesomeIcon icon={faShoppingBag} /> ({props.count})
                         </Link>
                     </li>

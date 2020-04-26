@@ -23,7 +23,7 @@ const ShippingInfo = (props) => {
         zipcode: '',
         city: '',
         state: '',
-        phone: 'Phone',
+        phone: '',
         newsletter: true,
         email: '',
     });
@@ -170,7 +170,7 @@ const ShippingInfo = (props) => {
                         <input
                             className="checkoutInput"
                             name="phone"
-                            type="tel"
+                            type="number"
                             placeholder="Phone"
                             onChange={(e) => setguest({ ...guest, phone: e.target.value })}
                             pattern="^[0-9]{10}$"

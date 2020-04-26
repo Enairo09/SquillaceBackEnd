@@ -240,7 +240,7 @@ const ProductCard = (props) => {
                         <h5>{product.description}</h5>
                         <form onSubmit={(e) => addProduct(e)} value="Add to cart">
                             <label className='sizeInput'>Size : </label>
-                            <select
+                            <select className='sizeInputbis'
                                 onChange={(e) => setproductToBasket({ ...productToBasket, size: e.target.value })} required>
                                 <option value="">--</option>
                                 <option value="S">S</option>

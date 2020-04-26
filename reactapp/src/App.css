@@ -643,6 +643,9 @@ Collection
   margin: 1%;
   cursor: pointer;
 }
+.seasonLight{
+  margin: 1%;
+}
 .season:hover{
   color: #666666
 }
@@ -768,6 +771,14 @@ PRODUCT CARD
 }
 
 .add-btn{
+  border: 1px solid transparent;
+  line-height: 1.5;
+  border-radius: .2rem;
+  color:#666666;
+  border-color: #666666;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  outline-style: none;
+  background-color: white;
   text-align: center;
   width: 100%;
   margin: 0;
@@ -801,7 +812,9 @@ PRODUCT CARD
 .sizeInput{
   margin-top: 20%;
 }
-
+.sizeInputbis{
+  border: 1px solid
+}
 .leftProdCard{
   position: relative;
   left: 12%;
@@ -869,7 +882,7 @@ POP UP
   right: 0;  
   bottom: 0;  
   margin: auto;  
-  background-color: rgba(0,0,0, 0.5);  
+  background-color: rgba(0,0,0, 0.8);  
   z-index: 25;
 }  
 .popupinner { 
@@ -878,7 +891,7 @@ POP UP
   left: 25%;  
   right: 25%;  
   top: 25%;  
-  bottom: 25%;  
+  /* bottom: 25%;   */
   padding: 3%;
   margin: auto;  
   border-radius: 20px;  
@@ -938,6 +951,9 @@ POP UP ADDRESS
 .popcross{
   float: right;
   margin: 3%
+}
+.popcross:hover{
+  cursor: pointer;
 }
 .address{
   width: auto;
@@ -1347,6 +1363,9 @@ POP UP MSG ============================== */
   margin-left: 3%;
   margin-right: 3%;
 }
+.icon:hover{
+  cursor: pointer;
+}
 /* ==============================
 SIGN IN UP PAGE
 ============================== */
@@ -1362,6 +1381,9 @@ SIGN IN UP PAGE
   width: 100%;
 }
 
+.Login-input:focus{
+outline : none
+}
 
 .form{
   display: flex;
@@ -1559,6 +1581,9 @@ input[type=number] {
   border-bottom: 1px solid #d0d0d0;
   width: 100%;
 }  
+.checkoutInput:focus {
+  outline:  none;
+}
 .checkOutForm{
   margin:2%;
   width: 75%;
@@ -2224,7 +2249,6 @@ STRIPE ELEMENTS
 COLLEC SLIDE
 ====================================== */
 
-
 .popupcollec {  
   position: fixed;  
   width: 100%;  
@@ -2234,7 +2258,7 @@ COLLEC SLIDE
   right: 0;  
   bottom: 0;  
   margin: auto;  
-  background-color: rgba(0,0,0, 0.5);  
+  background-color: rgba(0,0,0, 0.8);  
   z-index: 25;
 }  
 .popupinnercollec { 
@@ -2242,9 +2266,9 @@ COLLEC SLIDE
   position: absolute;  
   left: 5%;  
   right: 5%;  
-  top: 25%;  
-  bottom: 25%;  
-  padding: 3%;
+  top: 5%;  
+  bottom: 5%;  
+  /* padding: 3%; */
   margin: auto;  
 
  
@@ -2264,8 +2288,8 @@ COLLEC SLIDE
 .closeIcone{
   position: fixed;
   color: #B1B1B1;
-  right : 5%;
-  top: 6%;
+  right : 8%;
+  top: 8%;
   cursor: pointer;
 }
 
@@ -2276,7 +2300,7 @@ COLLEC SLIDE
 .leftIcone{
   position: fixed;
   color: #B1B1B1;
-  left : 5%;
+  left : 8%;
   top: 48%;
   cursor: pointer;
 }
@@ -2287,7 +2311,7 @@ COLLEC SLIDE
 .rightIcone{
   position: fixed;
   color: #B1B1B1;
-  right : 5%;
+  right : 8%;
   top: 48%;
   cursor: pointer;
 }

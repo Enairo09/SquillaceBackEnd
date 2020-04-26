@@ -31,8 +31,8 @@ const Checkout = (props) => {
         guest_id: '',
         status: false
     })
-    const [userAssociate, setuserAssociate] = useState();
-
+    const [userAssociate, setuserAssociate] = useState(false);
+    const [clickCreate, setclickCreate] = useState(false);
     //const [userToSend, setuserToSend] = useState('');
 
     //je recupere mon produit
@@ -138,35 +138,37 @@ const Checkout = (props) => {
     } else {
         return (
             <div className="blocCheckout">
-                <form className={userAssociate ? "form loginCheckoutBIG" : "form loginCheckout"} onSubmit={(e) => loginUser(e)} >
+                {clickCreate ? null :
 
-                    {userAssociate ? <h2>Welcome Back ! <br></br><br></br>Log In</h2> : <h2>LOG IN</h2>}
-                    <span className="logContent">
-                        <label>Email</label>
-                        <input
-                            className="Login-input"
-                            name="login_email"
-                            placeholder="Votre email"
-                            onChange={(e) => setolduser({ ...olduser, email: e.target.value })}
-                            value={olduser.email}
-                            required
-                        />
-                        <label>Password</label>
-                        <input
-                            type="password"
-                            className="Login-input"
-                            name="login_password"
-                            placeholder="Votre mot de passe"
-                            onChange={(e) => setolduser({ ...olduser, password: e.target.value })}
-                            value={olduser.password}
-                            required
-                        />
-                        <Link className="resetPass">Forgot your password ?</Link>
-                    </span>
-                    <input className="button log" type="submit" method="post" value="LOG IN" />
-                </form>
+                    <form className={userAssociate ? "form loginCheckoutBIG" : "form loginCheckout"} onSubmit={(e) => loginUser(e)} >
+                        {userAssociate ? <h2>Welcome Back ! <br></br><br></br>Log In</h2> : <h2>LOG IN</h2>}
+                        <span className="logContent">
+                            <label>Email</label>
+                            <input
+                                className="Login-input"
+                                name="login_email"
+                                placeholder="Votre email"
+                                onChange={(e) => setolduser({ ...olduser, email: e.target.value })}
+                                value={olduser.email}
+                                required
+                            />
+                            <label>Password</label>
+                            <input
+                                type="password"
+                                className="Login-input"
+                                name="login_password"
+                                placeholder="Votre mot de passe"
+                                onChange={(e) => setolduser({ ...olduser, password: e.target.value })}
+                                value={olduser.password}
+                                required
+                            />
+                            <Link className="resetPass">Forgot your password ?</Link>
+                        </span>
+                        <input className="button log" type="submit" method="post" value="LOG IN" />
+                    </form>
+                }
                 {userAssociate ? null :
-                    <form className="form loginCheckout" onSubmit={(e) => login(e)}>
+                    <form className={clickCreate ? "form loginCheckoutBIG" : "form loginCheckout"} onSubmit={(e) => login(e)}>
                         <h2>REGISTER</h2>
                         <span className="logContent">
                             <h5>If you still don't have a Squillace account, <br></br>use this registration form to join in.</h5>
@@ -231,7 +233,7 @@ const Checkout = (props) => {
                             <span className="logContent">
                                 Create a new account
                             </span>
-                            <input className="button log" type="submit" method="post" onClick={(e) => setuserAssociate(false)} value='CREATE ACCOUNT' />
+                            <input className="button log" type="submit" method="post" onClick={(e) => { setuserAssociate(false); setclickCreate(true) }} value='CREATE ACCOUNT' />
                         </div>
                         : null}
                 </form>

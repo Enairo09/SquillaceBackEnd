@@ -10,6 +10,7 @@ const Collection = (props) => {
         value: '',
         id: ''
     })
+    const [active, setactive] = useState('');
 
     const [fw19picList, setfw19picList] = useState([
         "fw19/1.jpg", "fw19/2.jpg", "fw19/3.jpg", "fw19/4.jpg", "fw19/5.jpg", "fw19/6.jpg", "fw19/7.jpg", "fw19/8.jpg", "fw19/9.jpg", "fw19/10.jpg", "fw19/11.jpg", "fw19/12.jpg", "fw19/13.jpg", "fw19/14.jpg", "fw19/15.jpg", "fw19/16.jpg"
@@ -24,7 +25,6 @@ const Collection = (props) => {
         setfullScreen(true);
     }
 
-
     let fw19List = fw19picList.map((imgSource, i) => {
         return (
             <img className="collecPic" src={imgSource} alt='' onClick={(e) => showFullScreen("fw19", i)} />
@@ -36,12 +36,13 @@ const Collection = (props) => {
             <img className="collecPic" src={imgSource} alt='' onClick={(e) => showFullScreen("ss20", i)} />
         )
     })
+
     return (
         <div className="collection content">
             <div className="collecSeason">
-                <h5 className="season" value="fw19" onClick={(e) => { setshowCollection(true) }}>Fall/Winter 19</h5>
-                <FontAwesomeIcon className="season" icon={faBolt} />
-                <h5 className="season" value="ss20" onClick={(e) => { setshowCollection(false) }}>Spring/Summer 20</h5>
+                <h5 className={active === 'fw19' ? "season active" : "season"} value="fw19" onClick={(e) => { setshowCollection(true); setactive("fw19") }}>Fall/Winter 19</h5>
+                <FontAwesomeIcon className="seasonLight" icon={faBolt} />
+                <h5 className={active === 'ss20' ? "season active" : "season"} value="ss20" onClick={(e) => { setshowCollection(false); setactive("ss20") }}>Spring/Summer 20</h5>
             </div>
 
             {showCollection ?
