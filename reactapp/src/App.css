@@ -1890,6 +1890,7 @@ MY SETTINGS FORM
   flex-direction: column;
 }
 .settingInput{
+  border: 1px solid;
   width: 98%;
   padding-right: 2%;
   margin-top: 1%;
