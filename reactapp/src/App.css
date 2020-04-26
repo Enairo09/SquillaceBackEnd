@@ -1899,7 +1899,6 @@ MY SETTINGS FORM
 
 .setFormBtn{
   display: flex;
-  /* flex-direction: row; */
 }
 .cancel{
   display: flex;
@@ -2322,6 +2321,8 @@ COLLEC SLIDE
 }
 
 .active{
-  font-weight: bold;
-  color: #555;
+  border-bottom: 1px solid;
+  /* font-weight: bold; */
+  /* color: #555; */
+  color: black;
 }

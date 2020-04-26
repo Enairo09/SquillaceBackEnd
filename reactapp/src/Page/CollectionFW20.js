@@ -19,6 +19,10 @@ const Collection = (props) => {
         "ss20/1.jpg", "ss20/2.jpg", "ss20/3.jpg", "ss20/4.jpg", "ss20/5.jpg", "ss20/6.jpg", "ss20/7.jpg", "ss20/8.jpg", "ss20/9.jpg", "ss20/10.jpg", "ss20/11.jpg", "ss20/12.jpg", "ss20/13.jpg", "ss20/14.jpg", "ss20/15.jpg", "ss20/16.jpg"
     ]);
 
+    useEffect(() => {
+        setactive('ss20');
+    }, []);
+
     let showFullScreen = (id, value) => {
         console.log(id, value)
         setimgToPass({ value: value, id: id });
