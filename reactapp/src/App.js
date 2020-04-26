@@ -91,7 +91,7 @@ function App(props) {
                 render={(props) => <Dashboard {...props} isAuthed={true} />}
               /> */}
               <Route path="/" exact component={HomePage} />
-              <Route path="/products" component={Products} />
+              <Route path="/products" exact component={Products} />
               <Route path="/form" component={Form} />
               <Route path="/signout" component={Logout} />
               <Route path="/signin" component={Login} />
@@ -129,7 +129,7 @@ function App(props) {
             <div>
               <Header count={props.count} user={checkIfExist(props.userName)} />
               <Route path="/" exact component={HomePage} />
-              <Route path="/products" component={Products} />
+              <Route path="/products" exact component={Products} />
               <Route path="/form" component={Form} />
               <Route path="/signout" component={Logout} />
               <Route path="/signin" component={Login} />

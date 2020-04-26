@@ -33,7 +33,7 @@ const ProductSlide = (props) => {
 
     return (
 
-
+        // <div className='popupprod'>
         <div className='popupprod'>
             <div>
                 <FontAwesomeIcon className="fa-2x closeIcone" icon={faTimes} onClick={(e) => props.setshow(false)} />
@@ -42,6 +42,7 @@ const ProductSlide = (props) => {
                 <img className="slideproduct" src={`/${picList[count].ref}`} alt="img1" onClick={(e) => goNext()} />
             </div>
         </div>
+        // </div>
     )
 }
 
