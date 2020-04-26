@@ -500,6 +500,7 @@ PRODUCTS
   -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
   -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
   user-select: none; /* Propriété standard */
+  cursor: pointer;
 }
 
 
@@ -628,6 +629,7 @@ Collection
   -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
   -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
   user-select: none; /* Propriété standard */
+  cursor: pointer;
 }
 .collecSeason{
   display: flex;
@@ -671,6 +673,7 @@ PRODUCT CARD
   margin-right: 3%;
   margin-left: 10%;
   margin-bottom: 10%;
+  cursor : zoom-in;
   -moz-user-select: none; /* Firefox */
   -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
   -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
@@ -2229,7 +2232,7 @@ COLLEC SLIDE
 
 .slidecollec{
   width:100%;
-  height:85vh;
+  height:90vh;
   object-fit: contain;
   -moz-user-select: none; /* Firefox */
  -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */

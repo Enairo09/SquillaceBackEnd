@@ -216,7 +216,7 @@ const ProductCard = (props) => {
 
             <div className="productCard">
                 {hideArrow ? null : <FontAwesomeIcon className="fa-2x leftProdCard" icon={faChevronLeft} onClick={(e) => goBack()} />}
-                <img className='productsPic' src={`/${imgToDisplay[count].ref}`} onClick={(e) => showFullScreen(`/${imgToDisplay[count].ref}`)} />
+                <img className='productsPic' src={`/products/${imgToDisplay[count].ref}`} onClick={(e) => showFullScreen(`/${imgToDisplay[count].ref}`)} />
                 {/* {checkIfExist(imgToDisplay[count + 1]) ? <img className='productsPic' src={`/${imgToDisplay[count + 1]}`} /> : null} */}
                 {hideArrow ? null : <FontAwesomeIcon className="fa-2x rightProdCard" icon={faChevronRight} onClick={(e) => goNext()} />}
                 {/* <Slide {...proprietes} className="productSlide">

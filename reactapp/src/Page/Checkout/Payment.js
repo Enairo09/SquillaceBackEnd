@@ -120,7 +120,7 @@ const Payment = (props) => {
                 <div className='payDetailL'>
                     <img
                         className="payPic"
-                        src={product.img} />
+                        src={`productstiny/${product.img}`} />
                     <h5 className='payProdName'
                     >{product.name}</h5>
                 </div>

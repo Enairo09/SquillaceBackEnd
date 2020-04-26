@@ -129,7 +129,7 @@ const Cart = (props) => {
         return (
             <div className='productsCart' key={i}>
                 <div className='productsCartPicTitle'>
-                    <img className="collecPic cartPic" src={product.img} />
+                    <img className="collecPic cartPic" src={`productstiny/${product.img}`} />
 
                     <h5 className='productsNameCart'>{product.name}</h5>
                 </div>

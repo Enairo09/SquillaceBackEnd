@@ -30,12 +30,15 @@ const CollecSlide = (props) => {
             setcount(listToCheck.length - 1);
         }
     }
+    let func = (e) => {
+        console.log("click")
+    }
     //const func = (event) => console.log('move', event.type, event.movementX);
 
     return (
 
 
-        <div className='popupcollec'>
+        <div className='popupcollec' onKeyPress={(e) => func(e.target)}>
             <div className='popupinnercollec'>
                 {props.collectionToShowID === "fw19" ?
                     <div>

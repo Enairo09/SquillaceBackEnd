@@ -43,7 +43,7 @@ const Product = (props) => {
 
     return (
       <span style={{ float: "left" }} className='products' key={i}  >
-        <img onClick={(e) => { console.log(e.target.id); goToProdCard((e.target.id)) }} id={product._id} className="productPic" src={product.img[0].ref} />
+        <img onClick={(e) => { console.log(e.target.id); goToProdCard((e.target.id)) }} id={product._id} className="productPic" src={`products/${product.img[0].ref}`} />
         <h4>{product.name}</h4>
         <span>
           <h5>{product.price}€</h5>
