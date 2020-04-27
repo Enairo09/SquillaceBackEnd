@@ -37,6 +37,7 @@ const Checkout = (props) => {
 
     //je recupere mon produit
     useEffect(() => {
+        window.scrollTo(0, 0);
         console.log("je recois quoi ? ?? ", props.prodList);
         const fetchData = async () => {
             let url = '/api/get-user-from-order';

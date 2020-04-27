@@ -17,6 +17,7 @@ const Product = (props) => {
 
   //je recupere ma liste de produits
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchData = async () => {
       await fetch('/api/product')
         .then(response => response.json())

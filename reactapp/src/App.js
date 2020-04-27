@@ -32,6 +32,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import checkIfExist from './Functions/checkIfExist';
 import Success from './Page/Checkout/Success';
+import AskForNewPass from './Page/Account/AskForNewPass';
+import ResetPassword from './Page/Account/ResetPassword';
 
 library.add(fas);
 
@@ -114,6 +116,7 @@ function App(props) {
               <Route path="/settingsform/:form" component={SettingsForm} />
               <Route path="/updatepass" component={UpdatePassword} />
               <Route path="/success" component={Success} />
+              <Route path="/resetpass/:token" component={ResetPassword} />
             </div>
           </Switch>
         </Router>
@@ -139,6 +142,8 @@ function App(props) {
               <Route path="/cart" component={Cart} />
               <Route path="/prodcard/:id" component={ProductCard} />
               <Route path="/contact" component={Contact} />
+              <Route path="/askfornewpass" component={AskForNewPass} />
+              <Route path="/resetpass/:token" component={ResetPassword} />
               <Route path="/checkout" component={Checkout} />
               <Route path="/shippinginfo" component={ShippingInfo} />
               <Route path="/payment" component={Payment} />

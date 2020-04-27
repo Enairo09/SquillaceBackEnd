@@ -30,7 +30,7 @@ const Contact = () => {
     //     return <Redirect to="/" />
     // } else {
     return (
-        <div className='content'>
+        <div className='BlocCard content'>
             <div className="contactTitle" style={{ height: 60 }}>
                 <h3 style={{ fontSize: 20, marginLeft: 20 }}>Contact Us</h3>
             </div>

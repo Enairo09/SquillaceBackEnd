@@ -62,6 +62,7 @@ const Payment = (props) => {
     //const [name, setName] = useState("i'm Grand Parent");
     //je recupere mon produit
     useEffect(() => {
+        window.scrollTo(0, 0);
         const fetchData = async () => {
 
             let url = '/api/getuserandcart';

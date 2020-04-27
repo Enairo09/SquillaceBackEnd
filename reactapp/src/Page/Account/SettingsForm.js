@@ -38,6 +38,7 @@ const SettingsForm = (props) => {
     });
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         console.log('here-------', props)
         const fetchData = async () => {
             let url = '/api/getuser';

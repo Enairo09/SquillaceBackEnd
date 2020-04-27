@@ -16,6 +16,9 @@ const About = (props) => {
     //         setcount(0);
     //     }
     // }
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="about content">

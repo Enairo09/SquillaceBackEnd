@@ -40,6 +40,9 @@ const CollecSlide = (props) => {
     }, []);
 
     useEffect(() => {
+
+        window.scrollTo(0, 0);
+
         document.addEventListener('keydown', handleUserKeyPress);
         return () => {
             window.removeEventListener('keydown', handleUserKeyPress);

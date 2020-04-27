@@ -37,6 +37,7 @@ const ShippingInfo = (props) => {
     const [totalProdQty, settotalProdQty] = useState(0);
     //je recupere mon produit
     useEffect(() => {
+        window.scrollTo(0, 0);
         const fetchData = async () => {
 
             let url = `/api/cart`

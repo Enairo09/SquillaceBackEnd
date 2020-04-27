@@ -30,7 +30,9 @@ const HomePage = (props) => {
     //     var time = 2000;
     //     changeImg(picList, time, i);
     // }, []);
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     let changeImg = (images, time, i) => {
         document.getElementById("slide").src = images[i];

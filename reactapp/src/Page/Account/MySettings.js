@@ -39,6 +39,7 @@ const MySettings = (props) => {
     });
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const fetchData = async () => {
             let url = '/api/getuser';
             fetch(url, {

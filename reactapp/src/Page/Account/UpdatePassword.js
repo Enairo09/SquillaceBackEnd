@@ -16,7 +16,9 @@ const UpdatePassword = (props) => {
     });
     const [nomatch, setnomatch] = useState(false);
     const [nomatchCurrent, setnomatchCurrent] = useState(false)
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     // const [user, setuser] = useState({
     //     firstname: '',
     //     lastname: '',

@@ -31,7 +31,9 @@ const userSchema = mongoose.Schema({
     gender: String,
     inscription: Date,
     birthday: Date,
-    orders: [orderSchema]
+    orders: [orderSchema],
+    resetpasswordToken: String,
+    resetpasswordExpires: Date,
 });
 
 var userModel = mongoose.model('users', userSchema);

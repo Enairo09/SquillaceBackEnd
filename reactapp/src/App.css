@@ -673,12 +673,47 @@ PRODUCT CARD
   overflow: scroll; */
 }
 
+.closeIconeProd{
+  position: fixed;
+  color: #1E1F22;
+  right : 0.5%;
+  top: 1%;
+  cursor: pointer;
+}
+
+.closeIconeProd:hover{
+  color: #B1B1B1; 
+}
+
+.leftIconeProd{
+  position: fixed;
+  color: #1E1F22;
+  left : 0.5%;
+  top: 48%;
+  cursor: pointer;
+}
+
+.leftIconeProd:hover{
+  color: #B1B1B1; 
+}
+.rightIconeProd{
+  position: fixed;
+  color: #1E1F22;
+  right : 0.5%;
+  top: 48%;
+  cursor: pointer;
+}
+
+.rightIconeProd:hover{
+  color: #B1B1B1; 
+}
+
 .productsPic{
-  width: 40%; 
-  height: 600px;
+  width: 35%; 
+  height: 80vh;
   object-fit: cover;
-  margin-right: 3%;
-  margin-left: 10%;
+  margin-right: 2%;
+  margin-left: 5%;
   margin-bottom: 10%;
   cursor : zoom-in;
   -moz-user-select: none; /* Firefox */
@@ -765,6 +800,9 @@ PRODUCT CARD
   margin-left: 2%;
 }
 .productsText{
+  width: 51%;
+  margin-left:2%;
+  margin-right:5%;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -817,8 +855,8 @@ PRODUCT CARD
 }
 .leftProdCard{
   position: relative;
-  left: 12%;
-  padding-top: 290px;
+  left: 7%;
+  padding-top: 38vh;
   color: #B1B1B1;
   cursor: pointer;
   -moz-user-select: none; /* Firefox */
@@ -829,8 +867,8 @@ PRODUCT CARD
 .rightProdCard{
   position: relative;
   color: #B1B1B1;
-  right:5%;
-  padding-top: 290px;
+  right:4%;
+  padding-top: 38vh;
   cursor: pointer;
   -moz-user-select: none; /* Firefox */
   -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
@@ -838,12 +876,53 @@ PRODUCT CARD
   user-select: none; /* Propriété standard */
 }
 
+@media only screen and (min-height: 1300px) {
+  .BlocCard{
+    padding-top: 200px;
+  }
+  .productCard{
+    padding-top: 200px;
+  }
+  .blocSignIn{
+    padding-top: 200px;
+  }
+  .productsPic{
+    width:43%;
+    height: 60vh;
+  }
+  .leftProdCard{
+    padding-top: 30vh;
+    left: 3%;
+  }
+  .rightProdCard{
+    right: 0;
+    padding-top: 30vh;
+  }
+  .productsText{
+    width:43%;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .productsPic{
+    width: 50%;
+    margin-right: 3%;
+    margin-left: 3%;
+  }
+  .leftProdCard{
+    left: 1%;
+  }
+  .rightProdCard{
+    right: 1%;
+  }
+  }
 @media only screen and (max-width: 600px) {
   .productCard{
     flex-direction: column;
   }
   .productsText{
-    margin: 2%
+    margin-right: 5%;
+    margin-left: 5%
   }
   /* .productSlide{
     width: 96%;
@@ -853,17 +932,18 @@ PRODUCT CARD
     display: none
   } 
   .productsPic{
-    width: 96%;
-    margin: 2%;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%
   }
   .leftProdCard{
     position: absolute;
-    left: 2%;
+    left: 0;
     padding-top: 290px;
   }
   .rightProdCard{
     position: absolute;
-    right: 2%;
+    right: 0;
     padding-top: 290px;
   }
 }
@@ -1372,8 +1452,22 @@ SIGN IN UP PAGE
 
 .blocSignIn{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.formfull{
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-bottom: 1px solid #d0d0d0;
+  border-right: 1px solid #d0d0d0;
+  width: 50%;
+  padding: 2%;
+  justify-content: space-around;
+  margin: 5%;
+  align-items: center;
+  box-shadow: 1px 1px 3px #555;
+}
 .Login-input{
   margin-bottom: 3%;
   border: none;
@@ -1438,6 +1532,9 @@ outline : none
 @media only screen and (max-width: 780px) {
   .blocSignIn{
     flex-direction: column;
+  }
+  .formfull{
+    width : 85%;
   }
 }
 

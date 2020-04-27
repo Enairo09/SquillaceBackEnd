@@ -25,11 +25,8 @@ const Cart = (props) => {
     const [storeId, setstoreId] = useState('');
 
     useEffect(() => {
-        //console.log('PROPS', props.prodList)
-        //setproductList(props.basket)
-        //console.log('JE RECOIS DANS LE CART', productList);
-        //console.log('calcul prix', totalProdQty)
 
+        window.scrollTo(0, 0);
         const fetchData = async () => {
 
             let url = `/api/cart`

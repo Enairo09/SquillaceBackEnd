@@ -17,7 +17,9 @@ const Slideshow = () => {
         //'homepic7.jpg', 'homepic8.jpg',
         //'homepic9.jpg', 'homepic10.jpg'
     ]);
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     var slideList = picList.map((imgSource, i) => {
 
         return (

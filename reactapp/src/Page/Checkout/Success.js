@@ -7,7 +7,9 @@ import checkIfExist from '../../Functions/checkIfExist';
 
 const Success = (props) => {
     const [userID, setuserID] = useLocalStorage('user', '');
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     if (checkIfExist(userID)) {
         return (
 

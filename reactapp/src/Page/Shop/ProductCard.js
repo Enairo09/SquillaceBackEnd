@@ -9,7 +9,7 @@ import { faArrowLeft } from '@fortawesome/fontawesome-free-solid';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import checkIfExist from '../../Functions/checkIfExist';
 import headCount from '../../Functions/headCount';
-import ProductSlide from '../ProductSlide';
+import ProductSlide from './ProductSlide';
 //import { Slide, slideRef } from 'react-slideshow-image';
 // const proprietes = {
 //     duration: 10000,
@@ -55,10 +55,16 @@ const ProductCard = (props) => {
     const [showPopup, setshowPopup] = useState(false);
 
     const [fullScreen, setfullScreen] = useState(false)
-    const [imgToPass, setimgToPass] = useState('')
+    const [imgToPass, setimgToPass] = useState('');
+    const [smallScreen, setsmallScreen] = useState(false);
 
     //je recupere mon produit
     useEffect(() => {
+        window.scrollTo(0, 0)
+        console.log('size screen', window.screen.width)
+        if (window.screen.width < 600) {
+            setsmallScreen(true)
+        }
         // for (var i = 0; i > props.basket.length; i++) {
         //     setcurrentBasket([...currentBasket, props.basket[i]]);
         //     console.log("update etat store", currentBasket)
@@ -207,7 +213,9 @@ const ProductCard = (props) => {
 
     return (
         <div className='content'>
-            {fullScreen ? <ProductSlide className="hideOnPhone" collectionToShowID={count} setshow={setfullScreen} arrayToDisplay={imgToDisplay} /> : null}
+            {fullScreen ? <ProductSlide
+                //className="hideOnPhone" 
+                collectionToShowID={count} setshow={setfullScreen} arrayToDisplay={imgToDisplay} /> : null}
 
             <a href='/products' className="backToSearch">
                 <FontAwesomeIcon className="backArrow" icon={faArrowLeft} />
@@ -216,7 +224,7 @@ const ProductCard = (props) => {
 
             <div className="productCard">
                 {hideArrow ? null : <FontAwesomeIcon className="fa-2x leftProdCard" icon={faChevronLeft} onClick={(e) => goBack()} />}
-                <img className='productsPic' src={`/products/${imgToDisplay[count].ref}`} onClick={(e) => showFullScreen(`/${imgToDisplay[count].ref}`)} />
+                <img className='productsPic' src={`/products/${imgToDisplay[count].ref}`} onClick={smallScreen ? (e) => goNext() : (e) => showFullScreen(`/${imgToDisplay[count].ref}`)} />
                 {/* {checkIfExist(imgToDisplay[count + 1]) ? <img className='productsPic' src={`/${imgToDisplay[count + 1]}`} /> : null} */}
                 {hideArrow ? null : <FontAwesomeIcon className="fa-2x rightProdCard" icon={faChevronRight} onClick={(e) => goNext()} />}
                 {/* <Slide {...proprietes} className="productSlide">

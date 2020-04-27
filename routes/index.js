@@ -11,6 +11,7 @@ var SHA256 = require('crypto-js/sha256');
 var encBase64 = require('crypto-js/enc-base64');
 var nodemailer = require('nodemailer');
 const creds = require('../models/emailConfig');
+const crypto = require("crypto");
 
 function allOptions(name) {
   if (name === 'undefined' || name == 'undefined' || name === null || name === undefined || name === '' || name === [] || name === 'null' || name == 'null') {
@@ -638,6 +639,72 @@ router.post('/newuser', async function (req, res, next) {
 
   } else {
     res.json({ status: false });
+  }
+});
+
+//J'envoie un mail pour reset mon password user
+router.post('/askfornewpass', async (req, res, next) => {
+  //je verifie que mon user existe 
+  let user = await userModel.findOne({ email: req.body.email, statut: 'user' });
+  //si j'ai un user j'envoie un mail 
+  if (allOptions(user)) {
+    var email = req.body.email
+    var token = crypto.randomBytes(32).toString('hex');
+    let url = "http://localhost:3001/resetpass/" // PLEASE REPLACE IN PRODUCTION !!!!
+    console.log('test token', token)
+    await userModel.updateOne({ email: req.body.email, statut: 'user' },
+      {
+        resetpasswordToken: token,
+        resetpasswordExpires: (Date.now() + 3600000)
+      });
+    var content = `Hello ${allOptions(user.firstname) ? `${user.firstname} ${user.lastname}` : email}, \n\n You are receiving this email because you (or someone else) have requested to reset the password for your Squillace account. \n Please click on the following link, or paste it into your browser to complete the process: \n ${url + token} \n If you didn't request this, please ignore this email and your password will remain unchanged.  \n\n Thank you ! \n\n Martina Squillace's Team`
+    console.log('hello', content, email)
+    let mail = await transporter.sendMail({
+      from: "info@martinasquillace.com",
+      to: email,  //Change to email address that you want to receive messages on
+      subject: "Password Reset from your Martina Squillace's account",
+      text: content
+    }, (err, data) => {
+      if (err) {
+        //si j'ai une erreur dans l'envoi de mon mail je renvoie une erreur
+        console.log("message fail", err);
+        res.json({
+          status: "true",
+          msg: 'fail'
+        })
+      } else {
+        //si mon mail est bien parti je renvoie un success
+        console.log("message sent");
+        res.json({
+          status: "true",
+          msg: 'success'
+        })
+      }
+    })
+  } else {
+    //si je n'ai pas d'user je retourne une erreur 
+    res.json({ status: false })
+  }
+});
+
+//Je reset mon password user
+router.post('/resetpassword', async (req, res, next) => {
+  //je verifie que mon token existe et est tjrs valide
+  let user = await userModel.findOne({ resetpasswordToken: req.body.token, resetpasswordExpires: { $gt: Date.now() } });
+  //si j'ai un user j'envoie un mail 
+  if (allOptions(user)) {
+    let salt = uid2(32);
+    let newpass = await userModel.updateOne(
+      { resetpasswordToken: req.body.token, resetpasswordExpires: { $gt: Date.now() } },
+      {
+        password: SHA256(req.body.newpass + salt).toString(encBase64),
+        token: uid2(32),
+        salt: salt,
+      });
+    res.json({ status: true });
+  } else {
+    //si je n'ai pas d'user je retourne une erreur 
+    res.json({ status: false })
   }
 });
 
